@@ -3,6 +3,7 @@ package usama.utech.lect1;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -11,56 +12,84 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.inputmethod.EditorInfo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import Adapter.ProductAdapter;
+import Model.Products;
 
 public class SearchProduct extends AppCompatActivity {
 
-    SearchView searchView;
-    ListView listView;
-    ArrayList<String> list;
-    ArrayAdapter<String > adapter;
+
+    private SearchView searchView;
+    private ProductAdapter adapter;
+    private List<Products> exampleList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_product);
 
-        searchView = (SearchView) findViewById(R.id.searchView);
-        listView = (ListView) findViewById(R.id.lv1);
+        fillExampleList();
 
-        list = new ArrayList<>();
-        list.add("Apple");
-        list.add("Banana");
-        list.add("Pineapple");
-        list.add("Orange");
-        list.add("Lychee");
-        list.add("Gavava");
-        list.add("Peech");
-        list.add("Melon");
-        list.add("Watermelon");
-        list.add("Papaya");
+        searchView = findViewById(R.id.searchView);
+        RecyclerView recyclerView = findViewById(R.id.lv1);
+        recyclerView.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        adapter = new ProductAdapter(exampleList);
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,list);
-        listView.setAdapter(adapter);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+        searching();
+
+    }
+
+    public void searching(){
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public boolean onQueryTextSubmit(String query) {
-
-                if(list.contains(query)){
-                    adapter.getFilter().filter(query);
-                }else{
-                    Toast.makeText(getApplicationContext(), "No Match found",Toast.LENGTH_LONG).show();
-                }
+            public boolean onQueryTextSubmit(String s) {
                 return false;
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
-
+            public boolean onQueryTextChange(String s) {
+                adapter.getFilter().filter(s);
                 return false;
             }
         });
+    }
 
+    private void fillExampleList() {
+        exampleList = new ArrayList<>();
+        exampleList.add(new Products("Product 1","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+                "Purchase Price: Rs 250","210"));
+        exampleList.add(new Products("New Pro 2","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+                "Purchase price : Rs 250","210"));
+        exampleList.add(new Products("Bulb 1","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+                "Purchase Price: Rs 250","210"));
+        exampleList.add(new Products("Clothes 2","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+                "Purchase price : Rs 250","210"));
+        exampleList.add(new Products("Laptops 1","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+                "Purchase Price: Rs 250","210"));
+        exampleList.add(new Products("Mobiles 2","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+                "Purchase price : Rs 250","210"));
+        exampleList.add(new Products("Mobiles 1","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+                "Purchase Price: Rs 250","210"));
+        exampleList.add(new Products("Desktops 2","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+                "Purchase price : Rs 250","210"));
     }
 
     @Override
@@ -69,4 +98,6 @@ public class SearchProduct extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), HomePage.class));
         finish();
     }
+
+
 }

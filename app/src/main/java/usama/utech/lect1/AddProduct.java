@@ -9,18 +9,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class AddProduct extends AppCompatActivity {
 
-    private TextView tv;
+    private EditText i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_product);
 
-        tv = (TextView) this.findViewById(R.id.mywidget);
-        tv.setSelected(true);  // Set focus to the textview
 
     }
 
