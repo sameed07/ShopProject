@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchProduct"
+    android:orientation="vertical"
+    android:background="#efefef">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue2"
+        app:popupTheme="@style/AppTheme" >
+
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter Product Name"
+            android:textAlignment="center"
+            android:elevation="5dp"
+            android:padding="5dp"
+            android:clickable="true"
+            android:searchHintIcon="@drawable/ic_search_black_24dp"
+            android:searchIcon="@drawable/ic_search_black_24dp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EDIT"
+            android:textColor="@color/white"
+            android:layout_marginLeft="320dp"
+            android:textSize="15dp"
+            android:textStyle="bold"/>
+    </android.support.v7.widget.Toolbar>
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lv1"
+        />
+
+</LinearLayout>

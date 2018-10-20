@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomePage">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="serif-monospace"
+            android:text="Welocme"
+            android:textAlignment="center"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerInParent="true"
+        android:columnCount="3"
+        android:rowCount="10">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_button"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:onClick="searchProduct"
+
+                android:padding="10dp"
+                android:scaleType="centerCrop"
+
+                android:src="@drawable/ic_search" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Search Product"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_button"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:padding="10dp"
+
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_add_to_cart"
+                android:onClick="addProduct"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Add Product"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_button"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:padding="10dp"
+
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_cash"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sell Product"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_button"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:padding="10dp"
+
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_buyer"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Buyer"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_button"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:padding="10dp"
+
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_profit"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Profit"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_button"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:padding="10dp"
+
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_sale"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sale"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_button"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:padding="10dp"
+
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_expensive"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Daily Expense"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_button"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:padding="10dp"
+
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_settings"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Account Setting"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_button"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:onClick="aboutActivity"
+
+                android:padding="10dp"
+                android:scaleType="centerCrop"
+
+                android:src="@drawable/ic_about_us" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="About Us"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+
+    </GridLayout>
+
+</RelativeLayout>
