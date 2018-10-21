@@ -16,6 +16,13 @@ public class ProductDb  extends SQLiteOpenHelper{
     private static final String DB_NAME = "Products.db";
     private static final int DB_VER = 1;
 
+    private static final String TABLE_PRODUCTS = "ProductDetail";
+    private static final String TABLE_USERS = "Users";
+    private static final String TABLE_BUYER = "Buyer";
+    private static final String TABLE_PROFIT = "Profit";
+    private static final String TABLE_SALE = "Sale";
+    private static final String TABLE_EXPENSE = "Expense";
+
     public ProductDb(Context context) {
         super(context, DB_NAME, null, DB_VER);
     }
@@ -23,9 +30,21 @@ public class ProductDb  extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-        String query = "CREATE TABLE ProductDetail (Id INTEGER ,BarCode TEXT, Name TEXT,Quantity TEXT" +
-                ",SalePrice TEXT ,PurchasePrice TEXT,WholeSalePrice TEXT) ";
-        sqLiteDatabase.execSQL(query);
+        String productTableCreateQuery = "CREATE TABLE "+TABLE_PRODUCTS+" (Id INTEGER ,BarCode TEXT, Name TEXT,Quantity TEXT" +
+        ",SalePrice TEXT ,PurchasePrice TEXT,WholeSalePrice TEXT) ";
+        String userTableCreateQuery = "CREATE TABLE "+TABLE_USERS+" (Id INTEGER PRIMARY KEY, Username TEXT, Password TEXT )";
+        String buyerTableCreateQuery = "CREATE TABLE "+TABLE_BUYER+" (Id INTEGER PRIMARY KEY , BuyerName text, TotalAmount text, PaidAmount text, RemainingAmount text, LastPaidDate text)";
+        String profitTableCreateQuery = "CREATE TABLE "+TABLE_PROFIT+" (Id INTEGER PRIMARY KEY, \"Date\" text, \"Time\" text, Profit text)";
+        String saleTableCreateQuery = "CREATE TABLE "+TABLE_SALE+" (Id INTEGER PRIMARY KEY,CustomerName text, ProductName text, QuantitySold text, \"Date\" text, \"Time\" text)";
+        String expenseTableCreateQuery = "CREATE TABLE "+TABLE_EXPENSE+" (Id INTEGER PRIMARY KEY,ItemName text,AmountPaid text, \"Date\" text, \"Time\" text)" ;
+
+        String allQuerys[] = {productTableCreateQuery, userTableCreateQuery, buyerTableCreateQuery, profitTableCreateQuery, saleTableCreateQuery,  expenseTableCreateQuery};
+
+        //to test
+        for (String querys: allQuerys) {
+            sqLiteDatabase.execSQL(querys);
+        }
+
 
     }
 
