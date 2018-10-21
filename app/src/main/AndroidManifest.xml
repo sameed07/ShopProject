@@ -9,8 +9,7 @@
         android:roundIcon="@drawable/ic_shopping_basket"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".LoginPage"
+        <activity android:name=".LoginPage"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,13 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" >
+        <activity android:name=".HomePage"
+            android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".HomePage" />
         <activity android:name=".AboutUs" />
         <activity android:name=".SearchProduct" />
-        <activity android:name=".AddProduct"></activity>
+        <activity android:name=".AddProduct"/>
     </application>
 
 </manifest>

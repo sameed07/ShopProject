@@ -20,26 +20,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ExampleV
     private List<Products> exampleList;
     private List<Products> exampleListFull;
 
-    class ExampleViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
-        TextView textView1;
-        TextView textView2;
 
-
-        TextView txtName;
-        TextView txtQuantity;
-        TextView txtPrice;
-        TextView txtPurchasePrice;
-
-
-        ExampleViewHolder(View itemView) {
-            super(itemView);
-            txtName = itemView.findViewById(R.id.txt_title);
-            txtQuantity = itemView.findViewById(R.id.txt_Quantity);
-            txtPrice = itemView.findViewById(R.id.txt_price);
-            txtPurchasePrice = itemView.findViewById(R.id.txt_saleprice);
-        }
-    }
     public ProductAdapter(List<Products> exampleList) {
         this.exampleList = exampleList;
         exampleListFull = new ArrayList<>(exampleList);
@@ -83,7 +64,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ExampleV
             if (constraint == null || constraint.length() == 0) {
                 filteredList.addAll(exampleListFull);
             } else {
-                String filterPattern = constraint.toString().toLowerCase().trim();
+                String filterPattern = constraint.toString().toLowerCase().trim();//to ask from sameed about the trim
 
                 for (Products item : exampleListFull) {
                     if (item.getName().toLowerCase().contains(filterPattern)) {
@@ -105,5 +86,27 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ExampleV
             notifyDataSetChanged();
         }
     };
+
+
+    class ExampleViewHolder extends RecyclerView.ViewHolder {
+//        ImageView imageView;
+//        TextView textView1;
+//        TextView textView2;
+//
+
+        TextView txtName;
+        TextView txtQuantity;
+        TextView txtPrice;
+        TextView txtPurchasePrice;
+
+
+        ExampleViewHolder(View itemView) {
+            super(itemView);
+            txtName = itemView.findViewById(R.id.txt_title);
+            txtQuantity = itemView.findViewById(R.id.txt_Quantity);
+            txtPrice = itemView.findViewById(R.id.txt_price);
+            txtPurchasePrice = itemView.findViewById(R.id.txt_saleprice);
+        }
+    }
 
 }
