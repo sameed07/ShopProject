@@ -52,7 +52,13 @@ public class ProductDb  extends SQLiteOpenHelper{
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
 
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS ProductDetail");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLE_PRODUCTS);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLE_USERS);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLE_BUYER);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLE_PROFIT);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLE_SALE);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLE_EXPENSE);
+
         onCreate(sqLiteDatabase);
     }
 
