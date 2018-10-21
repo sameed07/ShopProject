@@ -1,4 +1,4 @@
-package Model;
+package usama.utech.lect1.Model;
 
 public class Products {
 

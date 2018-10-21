@@ -1,4 +1,4 @@
-package Adapter;
+package usama.utech.lect1.Adapter;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import Model.Products;
+import usama.utech.lect1.Model.Products;
 import usama.utech.lect1.R;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ExampleViewHolder> implements Filterable {
