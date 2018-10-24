@@ -12,19 +12,23 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="70dp"
         android:background="@color/blue2"
         app:popupTheme="@style/AppTheme" >
 
 
         <SearchView
+            android:queryHint="Search your product here"
+            android:background="@drawable/search_boarder"
             android:id="@+id/searchView"
-            android:layout_width="340dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Product Name"
             android:textAlignment="center"
             android:elevation="5dp"
-            android:padding="5dp"
+            android:layout_marginTop="5dp"
+
+            android:layout_marginRight="10dp"
             android:clickable="true"
             android:searchHintIcon="@drawable/ic_search_black_24dp"
             android:searchIcon="@drawable/ic_search_black_24dp"
