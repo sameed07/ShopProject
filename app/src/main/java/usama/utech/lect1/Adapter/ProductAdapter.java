@@ -41,9 +41,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ExampleV
         Products currentItem = exampleList.get(position);
 
         holder.txtName.setText(currentItem.getName());
-        holder.txtQuantity.setText(currentItem.getQuantity());
-        holder.txtPrice.setText(currentItem.getSalePrice());
-        holder.txtPurchasePrice.setText(currentItem.getPurchasePrice());
+        holder.txtQuantity.setText(currentItem.getQuantity()+"");
+        holder.txtPrice.setText(currentItem.getSalePrice()+"");
+        holder.txtPurchasePrice.setText(currentItem.getPurchasePrice()+"");
 
     }
 

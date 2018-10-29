@@ -2,35 +2,33 @@ package usama.utech.lect1.Model;
 
 public class Products {
 
-    private String id;
+    private int id;
     private String barCode;
     private String name;
-    private String quantity;
-    private String salePrice;
-    private String purchasePrice;
-    private String wholeSalePrice;
+    private int quantity;
+    private double salePrice;
+    private double purchasePrice;
+    private double wholeSalePrice;
 
     public Products() {
-
     }
 
-    public Products(String name, String barCode, String id, String quantity, String salePrice, String
-            purchasePrice, String wholeSalePrice) {
-        this.name = name;
-        this.barCode = barCode;
+    public Products(int id, String barCode, String name, int quantity, double salePrice, double purchasePrice, double wholeSalePrice) {
         this.id = id;
+        this.barCode = barCode;
+        this.name = name;
         this.quantity = quantity;
         this.salePrice = salePrice;
         this.purchasePrice = purchasePrice;
         this.wholeSalePrice = wholeSalePrice;
     }
 
-    public String getName() {
-        return name;
+    public int getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getBarCode() {
@@ -41,43 +39,43 @@ public class Products {
         this.barCode = barCode;
     }
 
-    public String getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    public String getSalePrice() {
+    public double getSalePrice() {
         return salePrice;
     }
 
-    public void setSalePrice(String salePrice) {
+    public void setSalePrice(double salePrice) {
         this.salePrice = salePrice;
     }
 
-    public String getPurchasePrice() {
+    public double getPurchasePrice() {
         return purchasePrice;
     }
 
-    public void setPurchasePrice(String purchasePrice) {
+    public void setPurchasePrice(double purchasePrice) {
         this.purchasePrice = purchasePrice;
     }
 
-    public String getWholeSalePrice() {
+    public double getWholeSalePrice() {
         return wholeSalePrice;
     }
 
-    public void setWholeSalePrice(String wholeSalePrice) {
+    public void setWholeSalePrice(double wholeSalePrice) {
         this.wholeSalePrice = wholeSalePrice;
     }
 }

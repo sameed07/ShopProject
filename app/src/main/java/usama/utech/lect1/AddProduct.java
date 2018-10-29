@@ -1,6 +1,8 @@
 package usama.utech.lect1;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import usama.utech.lect1.Database.ProductDb;
+import usama.utech.lect1.Model.Products;
 
 public class AddProduct extends AppCompatActivity {
 
@@ -143,6 +148,55 @@ public class AddProduct extends AppCompatActivity {
         });
         dialog.setCancelable(false);
         dialog.show();
+
+    }
+
+    public void addProductsToDB(View view) {
+
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("Add Product");
+        dialog.setMessage("Are You Sure You Want To Add This Product?");
+        dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+
+                try{
+
+                    ProductDb db = new ProductDb(AddProduct.this);
+
+                    Products products = new Products();
+
+                    products.setBarCode(tv_barcode.getText().toString());
+                    products.setName(tv_name.getText().toString());
+                    products.setPurchasePrice(Double.parseDouble(tv_pPrice.getText().toString()));
+                    products.setSalePrice(Double.parseDouble(tv_sPrice.getText().toString()));
+                    products.setWholeSalePrice(Double.parseDouble(tv_wPrice.getText().toString()));
+                    products.setQuantity(Integer.parseInt(tv_quantity.getText().toString()));
+
+                    db.insertInToProductsTable(products);
+
+                    Toast.makeText(AddProduct.this, "Product Added", Toast.LENGTH_SHORT).show();
+                }
+                catch(Exception e){
+                    Toast.makeText(AddProduct.this, "Error Adding Product", Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        });
+        dialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                dialogInterface.dismiss();
+
+            }
+        });
+        dialog.show();
+
+
+
 
     }
 }

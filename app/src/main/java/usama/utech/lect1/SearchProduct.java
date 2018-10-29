@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import usama.utech.lect1.Adapter.ProductAdapter;
+import usama.utech.lect1.Database.ProductDb;
 import usama.utech.lect1.Model.Products;
 
 public class SearchProduct extends AppCompatActivity {
@@ -74,23 +75,26 @@ public class SearchProduct extends AppCompatActivity {
 
     private void fillExampleList() {
         exampleList = new ArrayList<>();
-        exampleList.add(new Products("Product 1","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
-                "Purchase Price: Rs 250","210"));
-        exampleList.add(new Products("New Pro 2","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
-                "Purchase price : Rs 250","210"));
-        exampleList.add(new Products("Bulb 1","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
-                "Purchase Price: Rs 250","210"));
-        exampleList.add(new Products("Clothes 2","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
-                "Purchase price : Rs 250","210"));
-        exampleList.add(new Products("Laptops 1","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
-                "Purchase Price: Rs 250","210"));
-        exampleList.add(new Products("Mobiles 2","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
-                "Purchase price : Rs 250","210"));
-        exampleList.add(new Products("Mobiles 1","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
-                "Purchase Price: Rs 250","210"));
-        exampleList.add(new Products("Desktops 2","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
-                "Purchase price : Rs 250","210"));
-    }
+        ProductDb db = new ProductDb(this);
+//        exampleList.add(new Products("Product 1","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+//                "Purchase Price: Rs 250","210"));
+//        exampleList.add(new Products("New Pro 2","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+//                "Purchase price : Rs 250","210"));
+//        exampleList.add(new Products("Bulb 1","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+//                "Purchase Price: Rs 250","210"));
+//        exampleList.add(new Products("Clothes 2","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+//                "Purchase price : Rs 250","210"));
+//        exampleList.add(new Products("Laptops 1","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+//                "Purchase Price: Rs 250","210"));
+//        exampleList.add(new Products("Mobiles 2","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+//                "Purchase price : Rs 250","210"));
+//        exampleList.add(new Products("Mobiles 1","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+//                "Purchase Price: Rs 250","210"));
+//        exampleList.add(new Products("Desktops 2","21313131","Product1","Quantity : 25","Sale Price : Rs 200",
+//                "Purchase price : Rs 250","210"));
+
+        exampleList.addAll(db.getAllProductsTableData());
+}
 
     @Override
     public void onBackPressed() {
