@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,44 +12,56 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:background="@color/blue2"
         app:popupTheme="@style/AppTheme" >
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
 
-        <SearchView
-            android:queryHint="Search your product here"
-            android:background="@drawable/search_boarder"
-            android:id="@+id/searchView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter Product Name"
-            android:textAlignment="center"
-            android:elevation="5dp"
-            android:layout_marginTop="5dp"
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_boarder"
+        android:clickable="true"
+        android:elevation="5dp"
+        android:hint="Enter Product Name"
+        android:layout_marginRight="50dp"
+        android:queryHint="Search your product here"
+        android:searchHintIcon="@drawable/ic_search_black_24dp"
+        android:searchIcon="@drawable/ic_search_black_24dp"
+        android:textAlignment="center" />
 
-            android:layout_marginRight="10dp"
-            android:clickable="true"
-            android:searchHintIcon="@drawable/ic_search_black_24dp"
-            android:searchIcon="@drawable/ic_search_black_24dp"
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/ic_barcode"
+        android:onClick="scanProductAndGetQROrBarcode"
+        android:clickable="true"
+        android:layout_alignParentRight="true" />
+</RelativeLayout>
 
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="EDIT"
-            android:textColor="@color/white"
-            android:layout_marginLeft="320dp"
-            android:textSize="15dp"
-            android:textStyle="bold"/>
     </android.support.v7.widget.Toolbar>
 
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
         android:id="@+id/lv1"
         />
 
-</LinearLayout>
+    <me.dm7.barcodescanner.zxing.ZXingScannerView
+        android:id="@+id/scanner"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

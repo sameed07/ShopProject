@@ -34,12 +34,12 @@ public class ProductDb extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("CREATE TABLE " + TABLE_PRODUCTS + " (Id INTEGER ,BarCode TEXT, Name TEXT,Quantity TEXT" + ",SalePrice TEXT ,PurchasePrice TEXT,WholeSalePrice TEXT) ");
-        db.execSQL("CREATE TABLE " + TABLE_USERS + " (Id INTEGER PRIMARY KEY, Username TEXT, Password TEXT )");
-        db.execSQL("CREATE TABLE " + TABLE_BUYER + " (Id INTEGER PRIMARY KEY , BuyerName text, TotalAmount text, PaidAmount text, RemainingAmount text, LastPaidDate text)");
-        db.execSQL("CREATE TABLE " + TABLE_PROFIT + " (Id INTEGER PRIMARY KEY, \"Date\" text, \"Time\" text, Profit text)");
-        db.execSQL("CREATE TABLE " + TABLE_SALE + " (Id INTEGER PRIMARY KEY,CustomerName text, ProductName text, QuantitySold text, \"Date\" text, \"Time\" text)");
-        db.execSQL("CREATE TABLE " + TABLE_EXPENSE + " (Id INTEGER PRIMARY KEY,ItemName text,AmountPaid text, \"Date\" text, \"Time\" text)");
+        db.execSQL("CREATE TABLE " + TABLE_PRODUCTS + " (Id INTEGER PRIMARY KEY AUTOINCREMENT ,BarCode TEXT, Name TEXT,Quantity TEXT" + ",SalePrice TEXT ,PurchasePrice TEXT,WholeSalePrice TEXT) ");
+        db.execSQL("CREATE TABLE " + TABLE_USERS + " (Id INTEGER PRIMARY KEY AUTOINCREMENT, Username TEXT, Password TEXT )");
+        db.execSQL("CREATE TABLE " + TABLE_BUYER + " (Id INTEGER PRIMARY KEY AUTOINCREMENT , BuyerName text, TotalAmount text, PaidAmount text, RemainingAmount text, LastPaidDate text)");
+        db.execSQL("CREATE TABLE " + TABLE_PROFIT + " (Id INTEGER PRIMARY KEY AUTOINCREMENT, \"Date\" text, \"Time\" text, Profit text)");
+        db.execSQL("CREATE TABLE " + TABLE_SALE + " (Id INTEGER PRIMARY KEY AUTOINCREMENT,CustomerName text, ProductName text, QuantitySold text, \"Date\" text, \"Time\" text)");
+        db.execSQL("CREATE TABLE " + TABLE_EXPENSE + " (Id INTEGER PRIMARY KEY AUTOINCREMENT,ItemName text,AmountPaid text, \"Date\" text, \"Time\" text)");
 
 
     }

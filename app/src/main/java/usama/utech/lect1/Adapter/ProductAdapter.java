@@ -57,6 +57,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ExampleV
         return exampleFilter;
     }
 
+
+
     private Filter exampleFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
