@@ -1,6 +1,8 @@
 package usama.utech.lect1.Adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +23,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ExampleV
 
     private List<Products> exampleList;
     private List<Products> exampleListFull;
+    private Context mContext;
 
 
-    public ProductAdapter(List<Products> exampleList) {
+    public ProductAdapter(Context context, List<Products> exampleList ) {
         this.exampleList = exampleList;
         exampleListFull = new ArrayList<>(exampleList);
+        mContext = context;
     }
 
     @NonNull
@@ -37,13 +42,21 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ExampleV
 
 
     @Override
-    public void onBindViewHolder(@NonNull ExampleViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ExampleViewHolder holder, final int position) {
         Products currentItem = exampleList.get(position);
 
         holder.txtName.setText(currentItem.getName());
-        holder.txtQuantity.setText(currentItem.getQuantity()+"");
-        holder.txtPrice.setText(currentItem.getSalePrice()+"");
-        holder.txtPurchasePrice.setText(currentItem.getPurchasePrice()+"");
+        holder.txtQuantity.setText("Quantity: "+currentItem.getQuantity()+"");
+        holder.txtPrice.setText("SalePrice: "+currentItem.getSalePrice()+"");
+        holder.txtPurchasePrice.setText("PurchasePrice: "+currentItem.getPurchasePrice()+"");
+
+        holder.parentLayoutOfProductAdaptor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+           //     Products products = exampleListFull.get(position);
+                Toast.makeText(mContext, holder.txtName.getText()+" is clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -102,6 +115,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ExampleV
         TextView txtPrice;
         TextView txtPurchasePrice;
 
+        CardView parentLayoutOfProductAdaptor;
+
 
         ExampleViewHolder(View itemView) {
             super(itemView);
@@ -109,6 +124,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ExampleV
             txtQuantity = itemView.findViewById(R.id.txt_Quantity);
             txtPrice = itemView.findViewById(R.id.txt_price);
             txtPurchasePrice = itemView.findViewById(R.id.txt_saleprice);
+            parentLayoutOfProductAdaptor = itemView.findViewById(R.id.parentLayoutOfProductAdaptor);
         }
     }
 

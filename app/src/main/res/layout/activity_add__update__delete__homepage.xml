@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Add_Update_Delete_Pages.Add_Update_Delete_Homepage">
+
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerInParent="true"
+        android:columnCount="1"
+        android:rowCount="3">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_button"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:onClick="goto_Add_Product"
+                android:padding="10dp"
+                android:scaleType="centerCrop"
+
+                android:src="@drawable/ic_add_to_cart" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Add Product"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_button"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:onClick="goto_update_Product"
+
+
+                android:padding="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_update_black_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Update Product"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_button"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:padding="10dp"
+                android:onClick="goto_delete_Product"
+
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_delete_forever_black_24dp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Delete Product"
+                android:textAlignment="center"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+
+    </GridLayout>
+
+</RelativeLayout>

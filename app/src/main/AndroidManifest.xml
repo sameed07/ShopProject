@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="usama.utech.lect1">
-    
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,8 @@
         android:roundIcon="@drawable/ic_shopping_basket"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginPage"
+        <activity
+            android:name=".LoginPage"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,13 +22,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomePage"
-            android:screenOrientation="portrait">
-
-        </activity>
+        <activity
+            android:name=".HomePage"
+            android:screenOrientation="portrait" />
         <activity android:name=".AboutUs" />
         <activity android:name=".SearchProduct" />
-        <activity android:name=".AddProduct"/>
+        <activity android:name=".Add_Update_Delete_Pages.AddProduct" />
+        <activity android:name=".Add_Update_Delete_Pages.UpdateProducts" />
+        <activity android:name=".Add_Update_Delete_Pages.DeleteProducts" />
+        <activity android:name=".Add_Update_Delete_Pages.Add_Update_Delete_Homepage"></activity>
     </application>
 
 </manifest>

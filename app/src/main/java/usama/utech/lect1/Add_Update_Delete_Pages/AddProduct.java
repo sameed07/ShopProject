@@ -1,4 +1,4 @@
-package usama.utech.lect1;
+package usama.utech.lect1.Add_Update_Delete_Pages;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -13,7 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import usama.utech.lect1.Database.ProductDb;
+import usama.utech.lect1.HomePage;
 import usama.utech.lect1.Model.Products;
+import usama.utech.lect1.R;
 
 public class AddProduct extends AppCompatActivity {
 
@@ -47,7 +49,7 @@ public class AddProduct extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(getApplicationContext(), HomePage.class));
+        startActivity(new Intent(getApplicationContext(), Add_Update_Delete_Homepage.class));
         finish();
     }
 

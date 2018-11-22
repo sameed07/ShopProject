@@ -7,7 +7,7 @@
     android:background="@android:color/white"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".Add_Update_Delete_Pages.AddProduct">
+    tools:context=".Add_Update_Delete_Pages.UpdateProducts">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -51,27 +51,27 @@
             android:padding="15.0dip">
 
             <!--<LinearLayout-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:orientation="horizontal">-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
 
-                <!--<TextView-->
-                    <!--android:layout_width="0.0dip"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_weight="1.0"-->
-                    <!--android:text="ID" />-->
+            <!--<TextView-->
+            <!--android:layout_width="0.0dip"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1.0"-->
+            <!--android:text="ID" />-->
 
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="  :  " />-->
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="  :  " />-->
 
-                <!--<TextView-->
-                    <!--android:id="@+id/tv_ID"-->
-                    <!--android:layout_width="0.0dip"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_weight="3.0"-->
-                    <!--android:text="-" />-->
+            <!--<TextView-->
+            <!--android:id="@+id/tv_ID"-->
+            <!--android:layout_width="0.0dip"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="3.0"-->
+            <!--android:text="-" />-->
             <!--</LinearLayout>-->
 
             <View
@@ -267,24 +267,10 @@
             android:onClick="addProductsToDB"
             android:paddingLeft="15.0dip"
             android:paddingRight="15.0dip"
-            android:text="ADD Product"
+            android:text="Update Product"
             android:textColor="@color/white" />
 
-        <TextView
-            android:id="@+id/mywidget"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="79dp"
-            android:ellipsize="marquee"
-            android:fadingEdge="horizontal"
-            android:marqueeRepeatLimit="marquee_forever"
-            android:scrollHorizontally="true"
-            android:singleLine="true"
-            android:text="Click On Edit Button To Add New Product Detail And Then Press Submit"
-            android:textColor="#ff4500" />
+
 
     </RelativeLayout>
 </LinearLayout>

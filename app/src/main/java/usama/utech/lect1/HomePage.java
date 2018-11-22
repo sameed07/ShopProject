@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Toast;
 
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
@@ -18,6 +17,9 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
 import java.util.List;
+
+import usama.utech.lect1.Add_Update_Delete_Pages.AddProduct;
+import usama.utech.lect1.Add_Update_Delete_Pages.Add_Update_Delete_Homepage;
 
 public class HomePage extends AppCompatActivity {
 
@@ -64,7 +66,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void addProduct(View view) {
-        startActivity(new Intent(getApplicationContext(), AddProduct.class));
+        startActivity(new Intent(getApplicationContext(), Add_Update_Delete_Homepage.class));
         finish();
     }
 

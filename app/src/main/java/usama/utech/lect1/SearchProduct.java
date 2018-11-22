@@ -2,32 +2,18 @@ package usama.utech.lect1;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
-import android.speech.RecognizerIntent;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.SearchView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.inputmethod.EditorInfo;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 
 import com.google.zxing.Result;
 
@@ -42,7 +28,7 @@ import usama.utech.lect1.Model.Products;
 public class SearchProduct extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
 
-    private SearchView searchView;
+    private AutoCompleteTextView autoCompleteTextView;
     private ProductAdapter adapter;
     private List<Products> exampleList;
 
@@ -59,11 +45,11 @@ public class SearchProduct extends AppCompatActivity implements ZXingScannerView
 
         fillExampleList();
 
-        searchView = findViewById(R.id.searchView);
+        autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
         RecyclerView recyclerView = findViewById(R.id.lv1);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        adapter = new ProductAdapter(exampleList);
+        adapter = new ProductAdapter(this, exampleList);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
@@ -71,20 +57,40 @@ public class SearchProduct extends AppCompatActivity implements ZXingScannerView
 
     }
 
-    public void searching(){
+    public void searching() {
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+        ArrayList<String> prodctNames = new ArrayList<>();
+
+        for (int i = 0; i < exampleList.size(); i++) {
+
+            Products productsdata = exampleList.get(i);
+            prodctNames.add(productsdata.getName());
+
+        }
+
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, prodctNames);
+        autoCompleteTextView.setAdapter(arrayAdapter);
+
+        autoCompleteTextView.addTextChangedListener(new TextWatcher() {
             @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
             }
 
             @Override
-            public boolean onQueryTextChange(String s) {
-                adapter.getFilter().filter(s);
-                return false;
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                adapter.getFilter().filter( autoCompleteTextView.getText().toString());
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
+
     }
 
     private void fillExampleList() {
@@ -108,7 +114,7 @@ public class SearchProduct extends AppCompatActivity implements ZXingScannerView
 //                "Purchase price : Rs 250","210"));
 
         exampleList.addAll(db.getAllProductsTableData());
-}
+    }
 
     @Override
     public void onBackPressed() {
@@ -119,14 +125,13 @@ public class SearchProduct extends AppCompatActivity implements ZXingScannerView
 
 
     public void scanProductAndGetQROrBarcode(View view) {
-        if (zXingScannerView.getVisibility() == View.INVISIBLE )
-        {
+        if (zXingScannerView.getVisibility() == View.INVISIBLE) {
             zXingScannerView.setVisibility(View.VISIBLE);
             zXingScannerView.startCamera();
 
-        }else {
+        } else {
             zXingScannerView.stopCamera();
-           // zXingScannerView.setFlash(false);
+            // zXingScannerView.setFlash(false);
             zXingScannerView.removeAllViews();
 
             zXingScannerView.setVisibility(View.INVISIBLE);
@@ -137,7 +142,7 @@ public class SearchProduct extends AppCompatActivity implements ZXingScannerView
     @Override
     public void handleResult(final Result result) {
         final String myResult = result.getText();
-        Toast.makeText(this, "result "+myResult, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "result " + myResult, Toast.LENGTH_SHORT).show();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Is This Scan Result Correct ?");
@@ -155,7 +160,7 @@ public class SearchProduct extends AppCompatActivity implements ZXingScannerView
 //                zXingScannerView.stopCamera();
 //               // zXingScannerView.setFlash(false);
 //
-               zXingScannerView.removeAllViews();
+                zXingScannerView.removeAllViews();
                 zXingScannerView.setVisibility(View.INVISIBLE);
 
 
