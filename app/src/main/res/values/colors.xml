@@ -7,5 +7,7 @@
     <color name="white2">#ffff</color>
     <color name="blue">#556bae</color>
     <color name="blue2">#1068da</color>
+    <color name="new_blue">#21409a</color>
     <color name="greycolor">#ff616161</color>
+    <color name="blueColor_for_homepage_icons">#3849B9</color>
 </resources>

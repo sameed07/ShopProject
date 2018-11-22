@@ -378,5 +378,150 @@ public class ProductDb extends SQLiteOpenHelper {
 
     }
 
+    //All delete quryes
+
+    public void delteFromProductTable(String productBarcode) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(TABLE_PRODUCTS, "BarCode" + " = ?", new String[]{productBarcode});
+        //or
+        //db.execSQL("DELETE FROM "+TABLE_PRODUCTS+" WHERE BarCode = '"+productBarcode+"'");
+
+        db.close(); // Closing database connection
+    }
+
+    public void delteFromUserTable(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(TABLE_USERS, "Id" + " = ?", new String[]{String.valueOf(id)});
+
+        db.close(); // Closing database connection
+    }
+
+    public void delteFromProfitTable(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(TABLE_PROFIT, "Id" + " = ?", new String[]{String.valueOf(id)});
+
+        db.close(); // Closing database connection
+    }
+
+    public void delteFromSaleTable(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(TABLE_SALE, "Id" + " = ?", new String[]{String.valueOf(id)});
+
+        db.close(); // Closing database connection
+    }
+
+    public void delteFromExpenseTable(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(TABLE_EXPENSE, "Id" + " = ?", new String[]{String.valueOf(id)});
+
+        db.close(); // Closing database connection
+    }
+
+    public void delteFromBuyerTable(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(TABLE_BUYER, "Id" + " = ?", new String[]{String.valueOf(id)});
+
+        db.close(); // Closing database connection
+    }
+
+    //All update quries
+
+    public void UpdateProductTable(Products productsData, int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues cv = new ContentValues();
+        cv.put("BarCode", productsData.getBarCode()); //These Fields should be your String values of actual column names
+        cv.put("Name", productsData.getName());
+        cv.put("Quantity", productsData.getQuantity());
+        cv.put("SalePrice", productsData.getSalePrice());
+        cv.put("PurchasePrice", productsData.getPurchasePrice());
+        cv.put("WholeSalePrice", productsData.getWholeSalePrice());
+
+
+        db.update(TABLE_PRODUCTS, cv, "_id = ?", new String[]{String.valueOf(id)});
+
+        db.close(); // Closing database connection
+    }
+
+    public void UpdateUserTable(Users userData, int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues cv = new ContentValues();
+        cv.put("Username", userData.getUsername()); //These Fields should be your String values of actual column names
+        cv.put("Password", userData.getPassword());
+
+
+        db.update(TABLE_USERS, cv, "_id = ?", new String[]{String.valueOf(id)});
+
+        db.close(); // Closing database connection
+    }
+
+    public void UpdateProfitTable(Profit profitData, int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues cv = new ContentValues();
+        cv.put("Date", profitData.getDate()); //These Fields should be your String values of actual column names
+        cv.put("Time", profitData.getTime());
+        cv.put("Profit", profitData.getProfit());
+
+
+        db.update(TABLE_PROFIT, cv, "_id = ?", new String[]{String.valueOf(id)});
+
+        db.close(); // Closing database connection
+    }
+
+    public void UpdateSaleTable(Sale saleData, int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues cv = new ContentValues();
+        cv.put("CustomerName", saleData.getCustomerName());
+        cv.put("ProductName", saleData.getProductName());
+        cv.put("QuantitySold", saleData.getQuantitySold());
+        cv.put("Date", saleData.getDate()); //These Fields should be your String values of actual column names
+        cv.put("Time", saleData.getTime());
+
+
+        db.update(TABLE_SALE, cv, "_id = ?", new String[]{String.valueOf(id)});
+
+        db.close(); // Closing database connection
+    }
+
+    public void UpdateExpenseTable(Expense expenseData, int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues cv = new ContentValues();
+        cv.put("ItemName", expenseData.getItemName());
+        cv.put("AmountPaid", expenseData.getAmountPaid());
+        cv.put("Date", expenseData.getDate());
+        cv.put("Time", expenseData.getTime());
+
+
+        db.update(TABLE_EXPENSE, cv, "_id = ?", new String[]{String.valueOf(id)});
+
+        db.close(); // Closing database connection
+    }
+
+    public void UpdateBuyerTable(Buyer buyerData, int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues cv = new ContentValues();
+        cv.put("BuyerName", buyerData.getBuyerName());
+        cv.put("TotalAmount", buyerData.getTotalAmount());
+        cv.put("PaidAmount", buyerData.getPaidAmount());
+        cv.put("RemainingAmount", buyerData.getRemainingAmount()); //These Fields should be your String values of actual column names
+        cv.put("LastPaidDate", buyerData.getLastPaidDate());
+
+
+        db.update(TABLE_BUYER, cv, "_id = ?", new String[]{String.valueOf(id)});
+
+        db.close(); // Closing database connection
+    }
+
 
 }
