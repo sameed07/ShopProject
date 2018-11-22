@@ -380,10 +380,10 @@ public class ProductDb extends SQLiteOpenHelper {
 
     //All delete quryes
 
-    public void delteFromProductTable(String productBarcode) {
+    public void delteFromProductTable(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        db.delete(TABLE_PRODUCTS, "BarCode" + " = ?", new String[]{productBarcode});
+        db.delete(TABLE_PRODUCTS, "Id" + " = ?", new String[]{String.valueOf(id)});
         //or
         //db.execSQL("DELETE FROM "+TABLE_PRODUCTS+" WHERE BarCode = '"+productBarcode+"'");
 
@@ -443,8 +443,7 @@ public class ProductDb extends SQLiteOpenHelper {
         cv.put("PurchasePrice", productsData.getPurchasePrice());
         cv.put("WholeSalePrice", productsData.getWholeSalePrice());
 
-
-        db.update(TABLE_PRODUCTS, cv, "_id = ?", new String[]{String.valueOf(id)});
+        db.update(TABLE_PRODUCTS, cv, "id = ?", new String[]{String.valueOf(id)});
 
         db.close(); // Closing database connection
     }
@@ -457,7 +456,7 @@ public class ProductDb extends SQLiteOpenHelper {
         cv.put("Password", userData.getPassword());
 
 
-        db.update(TABLE_USERS, cv, "_id = ?", new String[]{String.valueOf(id)});
+        db.update(TABLE_USERS, cv, "id = ?", new String[]{String.valueOf(id)});
 
         db.close(); // Closing database connection
     }
@@ -471,7 +470,7 @@ public class ProductDb extends SQLiteOpenHelper {
         cv.put("Profit", profitData.getProfit());
 
 
-        db.update(TABLE_PROFIT, cv, "_id = ?", new String[]{String.valueOf(id)});
+        db.update(TABLE_PROFIT, cv, "id = ?", new String[]{String.valueOf(id)});
 
         db.close(); // Closing database connection
     }
@@ -487,7 +486,7 @@ public class ProductDb extends SQLiteOpenHelper {
         cv.put("Time", saleData.getTime());
 
 
-        db.update(TABLE_SALE, cv, "_id = ?", new String[]{String.valueOf(id)});
+        db.update(TABLE_SALE, cv, "id = ?", new String[]{String.valueOf(id)});
 
         db.close(); // Closing database connection
     }
@@ -502,7 +501,7 @@ public class ProductDb extends SQLiteOpenHelper {
         cv.put("Time", expenseData.getTime());
 
 
-        db.update(TABLE_EXPENSE, cv, "_id = ?", new String[]{String.valueOf(id)});
+        db.update(TABLE_EXPENSE, cv, "id = ?", new String[]{String.valueOf(id)});
 
         db.close(); // Closing database connection
     }
@@ -518,7 +517,7 @@ public class ProductDb extends SQLiteOpenHelper {
         cv.put("LastPaidDate", buyerData.getLastPaidDate());
 
 
-        db.update(TABLE_BUYER, cv, "_id = ?", new String[]{String.valueOf(id)});
+        db.update(TABLE_BUYER, cv, "id = ?", new String[]{String.valueOf(id)});
 
         db.close(); // Closing database connection
     }

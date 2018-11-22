@@ -7,7 +7,7 @@
     android:background="@android:color/white"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".Add_Update_Delete_Pages.UpdateProducts">
+    tools:context=".Add_Update_Delete_Pages.UpdateOrDeleteProducts">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -87,6 +87,33 @@
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
+                    android:text="ID" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  :  " />
+
+                <TextView
+                    android:id="@+id/textv_ID"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3.0"
+                    android:text="-" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="15.0dip" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
                     android:text="Barcode" />
 
                 <TextView
@@ -95,7 +122,7 @@
                     android:text="  :  " />
 
                 <TextView
-                    android:id="@+id/tv_barcode"
+                    android:id="@+id/textv_barcode"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.0"
@@ -123,7 +150,7 @@
                     android:text="  :  " />
 
                 <TextView
-                    android:id="@+id/tv_name"
+                    android:id="@+id/textv_name"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.0"
@@ -151,7 +178,7 @@
                     android:text="  :  " />
 
                 <TextView
-                    android:id="@+id/tv_quantity"
+                    android:id="@+id/textv_quantity"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.0"
@@ -179,7 +206,7 @@
                     android:text="  :  " />
 
                 <TextView
-                    android:id="@+id/tv_PPrice"
+                    android:id="@+id/textv_PPrice"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.0"
@@ -207,7 +234,7 @@
                     android:text="  :  " />
 
                 <TextView
-                    android:id="@+id/tv_SPrice"
+                    android:id="@+id/textv_SPrice"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.0"
@@ -235,7 +262,7 @@
                     android:text="  :  " />
 
                 <TextView
-                    android:id="@+id/tv_WhPrice"
+                    android:id="@+id/textv_WhPrice"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.0"
@@ -248,7 +275,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/fullscreen_dialog"
+            android:id="@+id/UpdateBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -257,18 +284,35 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="121dp"
-            android:layout_marginLeft="121dp"
-            android:layout_marginTop="321dp"
-            android:layout_marginEnd="115dp"
-            android:layout_marginRight="115dp"
-            android:layout_marginBottom="142dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="325dp"
+            android:layout_marginEnd="220dp"
+            android:layout_marginRight="220dp"
+            android:layout_marginBottom="138dp"
             android:background="@color/colorAccent"
-            android:onClick="addProductsToDB"
+            android:onClick="updateProductInDB"
             android:paddingLeft="15.0dip"
             android:paddingRight="15.0dip"
             android:text="Update Product"
             android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/DeleteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignTop="@+id/UpdateBtn"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="24dp"
+            android:background="@color/colorAccent"
+            android:onClick="deleteProductFromDB"
+            android:paddingLeft="15.0dip"
+            android:paddingRight="15.0dip"
+            android:text="Delete Product"
+            android:textColor="@color/white"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="24dp" />
 
 
 

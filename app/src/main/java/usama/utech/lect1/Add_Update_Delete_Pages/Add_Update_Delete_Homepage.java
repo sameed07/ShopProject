@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import usama.utech.lect1.HomePage;
-import usama.utech.lect1.LoginPage;
 import usama.utech.lect1.R;
 
 public class Add_Update_Delete_Homepage extends AppCompatActivity {
@@ -24,12 +23,12 @@ public class Add_Update_Delete_Homepage extends AppCompatActivity {
     }
 
     public void goto_update_Product(View view) {
-        startActivity(new Intent(getApplicationContext(), UpdateProducts.class));
+        startActivity(new Intent(getApplicationContext(), UpdateAndDeleteProductRView.class));
         finish();
     }
 
     public void goto_delete_Product(View view) {
-        startActivity(new Intent(getApplicationContext(), DeleteProducts.class));
+        startActivity(new Intent(getApplicationContext(), UpdateAndDeleteProductRView.class));
         finish();
     }
 

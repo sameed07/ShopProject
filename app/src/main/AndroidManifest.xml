@@ -28,8 +28,8 @@
         <activity android:name=".AboutUs" />
         <activity android:name=".SearchProduct" />
         <activity android:name=".Add_Update_Delete_Pages.AddProduct" />
-        <activity android:name=".Add_Update_Delete_Pages.UpdateProducts" />
-        <activity android:name=".Add_Update_Delete_Pages.DeleteProducts" />
+        <activity android:name=".Add_Update_Delete_Pages.UpdateOrDeleteProducts" />
+        <activity android:name=".Add_Update_Delete_Pages.UpdateAndDeleteProductRView" />
         <activity android:name=".Add_Update_Delete_Pages.Add_Update_Delete_Homepage"></activity>
     </application>
 
