@@ -54,6 +54,11 @@ public class HomePage extends AppCompatActivity {
 
     }
 
+    public void onProfit(View view){
+        Intent i = new Intent(HomePage.this,ProfitPage.class);
+        startActivity(i);
+    }
+
     public void aboutActivity(View view) {
 
         startActivity(new Intent(getApplicationContext(), AboutUs.class));

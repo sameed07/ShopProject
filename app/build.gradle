@@ -43,6 +43,8 @@ dependencies {
 //multidex
     implementation 'com.android.support:multidex:1.0.3'
 
+    implementation 'com.jjoe64:graphview:4.2.2'
+
     //for online database testing/checking
     debugImplementation 'com.amitshekhar.android:debug-db:1.0.0'
 

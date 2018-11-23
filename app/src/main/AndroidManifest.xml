@@ -31,6 +31,7 @@
         <activity android:name=".Add_Update_Delete_Pages.UpdateOrDeleteProducts" />
         <activity android:name=".Add_Update_Delete_Pages.UpdateAndDeleteProductRView" />
         <activity android:name=".Add_Update_Delete_Pages.Add_Update_Delete_Homepage"></activity>
+        <activity android:name=".ProfitPage"></activity>
     </application>
 
 </manifest>
