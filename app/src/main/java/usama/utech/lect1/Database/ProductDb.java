@@ -379,7 +379,13 @@ public class ProductDb extends SQLiteOpenHelper {
     }
 
     //All delete quryes
+public void delete(){
+    SQLiteDatabase db = this.getWritableDatabase();
 
+    db.execSQL("delete from Profit");
+    db.close();
+
+}
     public void delteFromProductTable(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
 

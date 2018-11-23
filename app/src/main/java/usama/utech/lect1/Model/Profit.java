@@ -16,7 +16,12 @@ public class Profit {
         this.time = time;
         this.profit = profit;
     }
+    public Profit( String date, String time, double profit) {
 
+        this.date = date;
+        this.time = time;
+        this.profit = profit;
+    }
     public int getId() {
         return id;
     }
